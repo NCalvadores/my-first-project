@@ -14,12 +14,10 @@
       <h1 class="logo">
         <a href="main_page.html" id="logo-link">67 Shop</a>
       </h1>
-
       <nav>
         <ul>
           <li><a href="main_page.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-
           <li class="profile-menu">
             <img src="https://cdnb.artstation.com/p/assets/images/images/043/322/445/large/jagdcent-liliwan-goldsi.jpg?1636956979" 
               id="headerAvatar" class="header-avatar" alt="User Avatar" />
@@ -33,7 +31,7 @@
 
                <div class="dark-mode-toggle">
                     <input type="checkbox" id="darkToggle" class="dark-toggle"/>
-                    <label for="darkToggle" class="dark-label" aria-label="Toggle dark mode">
+                    <label for="darkToggle" class="dark-label">
                     <svg fill="#ffffff" class="sun" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>sun</title> <path d="M10.68 21.64c-3.12 0-5.64-2.52-5.64-5.64s2.52-5.64 5.64-5.64 5.64 2.52 5.64 5.64-2.52 5.64-5.64 5.64zM10.68 12.040c-2.2 0-3.96 1.76-3.96 3.96s1.76 3.96 3.96 3.96 3.96-1.76 3.96-3.96-1.76-3.96-3.96-3.96zM10.68 9.040c-0.48 0-0.84-0.36-0.84-0.84v-2.040c0-0.48 0.36-0.84 0.84-0.84s0.84 0.36 0.84 0.84v2.040c0 0.48-0.36 0.84-0.84 0.84zM16.2 11.32c-0.2 0-0.44-0.080-0.6-0.24-0.32-0.32-0.32-0.84 0-1.2l1.44-1.44c0.32-0.32 0.84-0.32 1.2 0 0.32 0.32 0.32 0.84 0 1.2l-1.44 1.44c-0.2 0.16-0.4 0.24-0.6 0.24zM18.48 16.84c-0.48 0-0.84-0.36-0.84-0.84s0.36-0.84 0.84-0.84h2.040c0.48 0 0.84 0.36 0.84 0.84s-0.36 0.84-0.84 0.84h-2.040zM17.64 23.8c-0.2 0-0.44-0.080-0.6-0.24l-1.44-1.48c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l1.44 1.44c0.32 0.32 0.32 0.84 0 1.2-0.16 0.2-0.4 0.28-0.6 0.28zM10.68 26.68c-0.48 0-0.84-0.36-0.84-0.84v-2.040c0-0.48 0.36-0.84 0.84-0.84s0.84 0.36 0.84 0.84v2.040c0 0.48-0.36 0.84-0.84 0.84zM3.72 23.8c-0.2 0-0.44-0.080-0.6-0.24-0.32-0.32-0.32-0.84 0-1.2l1.44-1.44c0.32-0.32 0.84-0.32 1.2 0s0.32 0.84 0 1.2l-1.44 1.44c-0.16 0.16-0.4 0.24-0.6 0.24zM0.84 16.84c-0.48 0-0.84-0.36-0.84-0.84s0.36-0.84 0.84-0.84h2.040c0.48 0 0.84 0.36 0.84 0.84s-0.36 0.84-0.84 0.84h-2.040zM5.16 11.32c-0.2 0-0.44-0.080-0.6-0.24l-1.44-1.44c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l1.44 1.44c0.32 0.32 0.32 0.84 0 1.2-0.16 0.16-0.36 0.24-0.6 0.24z"></path> </g></svg>
                     <?xml version="1.0" encoding="utf-8"?><svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" class="moon" xmlns="http://www.w3.org/2000/svg">
                     <title>moon</title>
@@ -46,30 +44,22 @@
          </li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Welcome to 67Shop</h2>
-      <p>Your one-stop shop for a bad products at over prices.</p>
-      <a href="products.html" class="btn">Shop Now</a>
-    </div>
-  </section>
-
   <section class="products" id="products">
     <div class="container">
-      <h2>Featured Products</h2>
-      <select id="categoryFilter">
+      <h2>Our Products</h2>
+      <select id="categoryFilter2">
         <option value="all">All</option>
-        <option value="phones">Phones</option>
+        <option value="phone">Phones</option>
         <option value="tablet">Tablets</option>
         <option value="laptop">Laptops</option>
         <option value="accessories">Accessories</option>
       </select>
+
       <div class="product-grid">
-        <div class="product" data-category="phones">
+        <div class="product" data-category="phone">
           <img src="https://picsum.photos/200?random=1" alt="Product 1">
           <h3>Red Magic 11 Pro</h3>
           <p>$239.00</p>
@@ -86,6 +76,12 @@
           <h3>MSI Katana</h3>
           <p>$1999.00</p>
           <button onclick="addToCart('MSI Katana', 1999)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="accessories">
+          <img src="https://picsum.photos/200?random=4" alt="Product 4">
+          <h3>Razer Cooler</h3>
+          <p>$119.00</p>
+          <button onclick="addToCart('Razer Cooler', 119)">Add to Cart</button>
         </div>
       </div>
     </div>

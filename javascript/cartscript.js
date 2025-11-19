@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
+    if (darkToggle) darkToggle.checked = true;
   }
 
   if (darkToggle) {

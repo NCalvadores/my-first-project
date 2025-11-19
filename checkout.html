@@ -3,96 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SimpleShop | Checkout</title>
-  <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="dark.css">
+  <title>67Shop | Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/global.css">
+  <link rel="stylesheet" href="assets/dark.css">
+  <link rel="stylesheet" href="assets/checkout.css">
 </head>
 <body>
 
   <script>
-    // Redirect to login if not logged in
     if (localStorage.getItem('loggedIn') !== 'true') {
       alert('You must be logged in to access the checkout page.');
       window.location.href = 'login.html';
     }
   </script>
-
-  <script>
-    // Redirect to login if not logged in
-    if (localStorage.getItem('loggedIn') !== 'true') {
-      alert('You must be logged in to view the cart.');
-      window.location.href = 'login.html';
-    }
-  </script>
-
+  
   <header>
     <div class="container">
-      <h1>SimpleShop</h1>
+      <h1 class="logo">
+        <a href="main_page.html" id="logo-link">67 Shop</a>
+      </h1>
       <nav>
         <ul>
           <li><a href="main_page.html">Home</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="login.html" id="auth-link">Login</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li class="profile-menu">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/043/322/445/large/jagdcent-liliwan-goldsi.jpg?1636956979" 
+              id="headerAvatar" class="header-avatar" alt="User Avatar" />
+
+           <div class="sub-menu-wrap" id="profileSubMenu">
+             <div class="sub-menu">
+               <h2 id="dropdown-name">Loading...</h2>
+               <a href="profile.html">Profile</a>
+               <a href="cart.html">Cart</a>
+               <a href="login.html" id="auth-link">Login</a>
+
+               <div class="dark-mode-toggle">
+                    <input type="checkbox" id="darkToggle" class="dark-toggle"/>
+                    <label for="darkToggle" class="dark-label">
+                    <svg fill="#ffffff" class="sun" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>sun</title> <path d="M10.68 21.64c-3.12 0-5.64-2.52-5.64-5.64s2.52-5.64 5.64-5.64 5.64 2.52 5.64 5.64-2.52 5.64-5.64 5.64zM10.68 12.040c-2.2 0-3.96 1.76-3.96 3.96s1.76 3.96 3.96 3.96 3.96-1.76 3.96-3.96-1.76-3.96-3.96-3.96zM10.68 9.040c-0.48 0-0.84-0.36-0.84-0.84v-2.040c0-0.48 0.36-0.84 0.84-0.84s0.84 0.36 0.84 0.84v2.040c0 0.48-0.36 0.84-0.84 0.84zM16.2 11.32c-0.2 0-0.44-0.080-0.6-0.24-0.32-0.32-0.32-0.84 0-1.2l1.44-1.44c0.32-0.32 0.84-0.32 1.2 0 0.32 0.32 0.32 0.84 0 1.2l-1.44 1.44c-0.2 0.16-0.4 0.24-0.6 0.24zM18.48 16.84c-0.48 0-0.84-0.36-0.84-0.84s0.36-0.84 0.84-0.84h2.040c0.48 0 0.84 0.36 0.84 0.84s-0.36 0.84-0.84 0.84h-2.040zM17.64 23.8c-0.2 0-0.44-0.080-0.6-0.24l-1.44-1.48c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l1.44 1.44c0.32 0.32 0.32 0.84 0 1.2-0.16 0.2-0.4 0.28-0.6 0.28zM10.68 26.68c-0.48 0-0.84-0.36-0.84-0.84v-2.040c0-0.48 0.36-0.84 0.84-0.84s0.84 0.36 0.84 0.84v2.040c0 0.48-0.36 0.84-0.84 0.84zM3.72 23.8c-0.2 0-0.44-0.080-0.6-0.24-0.32-0.32-0.32-0.84 0-1.2l1.44-1.44c0.32-0.32 0.84-0.32 1.2 0s0.32 0.84 0 1.2l-1.44 1.44c-0.16 0.16-0.4 0.24-0.6 0.24zM0.84 16.84c-0.48 0-0.84-0.36-0.84-0.84s0.36-0.84 0.84-0.84h2.040c0.48 0 0.84 0.36 0.84 0.84s-0.36 0.84-0.84 0.84h-2.040zM5.16 11.32c-0.2 0-0.44-0.080-0.6-0.24l-1.44-1.44c-0.32-0.32-0.32-0.84 0-1.2 0.32-0.32 0.84-0.32 1.2 0l1.44 1.44c0.32 0.32 0.32 0.84 0 1.2-0.16 0.16-0.36 0.24-0.6 0.24z"></path> </g></svg>
+                    <?xml version="1.0" encoding="utf-8"?><svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" class="moon" xmlns="http://www.w3.org/2000/svg">
+                    <title>moon</title>
+                    <path d="M29.684 23.984l-0.021-0.055c-0.193-0.456-0.638-0.771-1.155-0.771-0.172 0-0.336 0.035-0.486 0.098l0.008-0.003c-1.219 0.521-2.638 0.824-4.127 0.824-5.937 0-10.751-4.813-10.751-10.751 0-4.458 2.713-8.282 6.579-9.911l0.071-0.026 0.221-0.093c0.444-0.199 0.747-0.636 0.747-1.145 0-0.625-0.458-1.142-1.057-1.235l-0.007-0.001c-0.676-0.106-1.455-0.167-2.249-0.167-8.421 0-15.248 6.827-15.248 15.248s6.827 15.248 15.248 15.248c4.91 0 9.278-2.321 12.067-5.925l0.026-0.035c0.161-0.208 0.258-0.473 0.258-0.76 0-0.197-0.046-0.383-0.127-0.548l0.003 0.007zM22.326 27.779c-1.44 0.612-3.115 0.968-4.873 0.968-7.041 0-12.75-5.708-12.75-12.75 0-6.189 4.41-11.349 10.26-12.507l0.081-0.013c-2.694 2.435-4.379 5.942-4.379 9.843 0 7.319 5.933 13.252 13.252 13.252 0.242 0 0.482-0.006 0.72-0.019l-0.033 0.001c-0.655 0.45-1.404 0.86-2.194 1.193l-0.084 0.031z"></path>
+                   </svg>
+                   </label>
+                </div>
+             </div>
+           </div>
+         </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container1">
     <h2>Checkout</h2>
 
-    <form id="checkout-form">
-      <label for="fullname">Full Name:</label>
-      <input type="text" id="fullname" required>
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form action="/action_page.php">
+            <div class="row">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Enter your name"required>
 
-      <label for="address">Shipping Address:</label>
-      <textarea id="address" required></textarea>
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email"required>
 
-      <label for="payment">Payment Method:</label>
-      <select id="payment" required>
-        <option value="">--Select--</option>
-        <option value="cod">Cash on Delivery</option>
-        <option value="gcash">GCash</option>
-        <option value="card">Credit/Debit Card</option>
-      </select>
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" id="adr" name="address" placeholder="Enter your address"required>
 
-      <button type="submit">Place Order</button>
-    </form>
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city"required>
 
-    <p id="confirmation-message"></p>
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="Enter your State/Region"required>
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" placeholder="Enter your ZIP code" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-50">
+                <h3>Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                <i class="fa-brands fa-cc-visa" style="color:navy;"></i>
+                <i class="fa-brands fa-cc-amex" style="color:blue;"></i>
+                <i class="fa-brands fa-cc-mastercard" style="color:red;"></i>
+              </div>
+
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="Enter your name">
+
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="Month">
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="Year">
+                  </div>
+                  <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="000">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <label>
+              <input type="checkbox" checked="checked" name="sameadr">
+              Shipping address same as billing
+            </label>
+
+            <input type="submit" value="Place Order" class="btn">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-25">
+        <div class="cart-section">
+          <div id="cart-container">
+            <h4>Cart</h4><br>
+            <ul id="cart-items"></ul>
+            <p><strong>Total:</strong> $<span id="total"><b>0</b></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 RandomShop. All rights reserved.</p>
+      <p>&copy; 2025 67 Shop. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
       e.preventDefault();
+
       const name = document.getElementById('fullname').value;
       const address = document.getElementById('address').value;
       const payment = document.getElementById('payment').value;
-
+    });
       if (name && address && payment) {
         localStorage.removeItem('cart');
-        document.getElementById('confirmation-message').textContent = `Thank you, ${name}! Your order will be shipped to ${address}. Payment method: ${payment}.`;
-        this.reset();
+        document.getElementById('confirmation-message').textContent =
+          `Thank you, ${name}! Your order will be shipped
+          to ${address}. Payment method: ${payment}.`;
+      } else {
+        alert('Please fill in all required fields.');
       }
-    });
-
-    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-    const loginLink = document.getElementById('auth-link');
-    if (isLoggedIn && loginLink) {
-      loginLink.textContent = 'Logout';
-      loginLink.href = '#';
-      loginLink.onclick = () => {
-        localStorage.setItem('loggedIn', 'false');
-        window.location.href = 'login.html';
-      };
-    }
-  </script>
-
+      </script>
+      <script src="javascript/checkout.js"></script>
+      <script src="javascript/script.js"></script>
 </body>
 </html>
