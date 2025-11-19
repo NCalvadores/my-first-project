@@ -26,3 +26,19 @@ const cart = JSON.parse(localStorage.getItem('cart')) || [];
   displayCheckoutCart();
 
 
+document.getElementById('checkout-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('fname').value;
+
+    if (name) {
+      // clear cart
+      localStorage.removeItem('cart');
+
+      // show confirmation
+      document.getElementById('confirmation-message').textContent =
+        `Thank you, ${name}! Your order has been placed successfully.`;
+    } else {
+      alert('Please enter your name.');
+    } 
+  });
